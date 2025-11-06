@@ -3,6 +3,7 @@ package org.example.calculatortest;
 
 import org.example.calculatortest.service.CalculatorService;
 import org.example.calculatortest.service.calculatorimple.CalculatorServiceImple;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -21,22 +22,25 @@ public class CalculatorServiceTest {
     @Test
     public void CalculatorPlusTest(){
         int result = calculatorServiceImple.calculatePlus(3, 5);
+        Assertions.assertEquals(8, result);
     }
 
     @Test
     public void CalculatorMinusTest(){
         int result = calculatorServiceImple.calculateMinus(3, 5);
-
+        Assertions.assertEquals(-2, result);
     }
 
     @Test
     public void CalculatorMultiplyTest(){
         int result = calculatorServiceImple.calculateMultiply(3, 5);
+        Assertions.assertEquals(15, result);
     }
 
     @Test
     public void CalculatorDivideTest(){
-        int result = calculatorServiceImple.calculateDivide(3, 5);
+        int result = calculatorServiceImple.calculateDivide(6, 2);
+        Assertions.assertEquals(3, result);
     }
 
     @Test
